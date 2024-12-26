@@ -1,20 +1,18 @@
-# -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
-import sys
 
 def cetak(text):
     """طباعة النصوص بالألوان."""
     print(text)
 
 def install_browser():
-    """إعداد المتصفح باستخدام Selenium."""
+    """إعداد المتصفح باستخدام Selenium (Firefox)."""
     global driver
-    options = webdriver.ChromeOptions()
+    options = webdriver.FirefoxOptions()
     options.add_argument('--headless')  # لتشغيل المتصفح في الوضع بدون واجهة رسومية (اختياري)
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Firefox(options=options)
 
 def login():
     """وظيفة تسجيل الدخول باستخدام Selenium."""
@@ -51,7 +49,6 @@ def login():
             cetak("[!] فشل تسجيل الدخول. تحقق من البيانات.")
     except Exception as e:
         cetak(f"[!] حدث خطأ أثناء تسجيل الدخول: {e}")
-        sys.exit()
 
 def main():
     """الدالة الرئيسية."""
