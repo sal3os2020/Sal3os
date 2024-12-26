@@ -48,7 +48,7 @@ def login():
         elif 'checkpoint' in driver.current_url:
             cetak("[!] الحساب مغلق (Checkpoint). حاول تسجيل الدخول يدويًا.")
         else:
-            cetك"[!] فشل تسجيل الدخول. تحقق من البيانات.")
+            cetak("[!] فشل تسجيل الدخول. تحقق من البيانات.")
     except Exception as e:
         cetak(f"[!] حدث خطأ أثناء تسجيل الدخول: {e}")
         sys.exit()
